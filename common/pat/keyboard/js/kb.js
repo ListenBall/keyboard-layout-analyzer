@@ -236,6 +236,53 @@ KB.glyphLayouts.european[KB.SHIFT_ALTGR_PUSH] = function(keyCode,fontSize,coords
 
 KB.glyphLayouts.european_ss = KB.glyphLayouts.european;
 
+KB.glyphLayouts.japanese = {};
+KB.glyphLayouts.japanese.getCoords = function(id, type, keyCode, fontSize, coords) {
+    return KB.glyphLayouts.japanese[type](keyCode, fontSize, coords);
+};
+ 
+KB.glyphLayouts.japanese[KB.PRIME_PUSH] = function(keyCode,fontSize,coords) {
+    var width = coords[1].x - coords[0].x,
+        padding = fontSize*0.4;//width * 0.1;
+        
+    return {
+        x: coords[3].x + padding,
+        y:coords[3].y - padding/2,
+        textAlign: "left",
+        textBaseline: "bottom"
+    };
+};
+KB.glyphLayouts.japanese[KB.SHIFT_PUSH] = function(keyCode,fontSize,coords) {
+    var width = coords[1].x - coords[0].x,
+        padding = fontSize*0.4;//width * 0.1;
+    return {
+        x: coords[0].x + padding,
+        y:coords[0].y + padding/2,
+        textAlign: "left",
+        textBaseline: "top"
+    };
+};
+KB.glyphLayouts.japanese[KB.ALTGR_PUSH] = function(keyCode,fontSize,coords) {
+    var width = coords[1].x - coords[0].x,
+        padding = fontSize*0.4;//width * 0.1;
+    return {
+        x: coords[2].x - padding,
+        y:coords[2].y - padding/2,
+        textAlign: "right",
+        textBaseline: "bottom"
+    };
+};
+KB.glyphLayouts.japanese[KB.SHIFT_ALTGR_PUSH] = function(keyCode,fontSize,coords) {
+    var width = coords[1].x - coords[0].x,
+        padding = fontSize*0.4;//width * 0.1;
+    return {
+        x: coords[1].x - padding,
+        y:coords[1].y + padding/2,
+        textAlign: "right",
+        textBaseline: "top"
+    };
+};
+
 KB.glyphLayouts.matrix = {};
 KB.glyphLayouts.matrix.getCoords = function(id, type, keyCode, fontSize, coords) {
     return KB.glyphLayouts.matrix[type](keyCode, fontSize, coords);
@@ -448,6 +495,98 @@ KB.keyMap.european.s683_225.split = false;
     keyWidths["4,3"] = 300; // space
     keyWidths["4,4"] = 75;
     keyWidths["4,7"] = 75;
+        
+    for (row = 0; row < 5; row++) {
+        for (ii = 0; ii < keyCount[row]; ii++) {
+            km[index] = {};
+            km[index].x = curX;
+            km[index].y = curY;
+            km[index].w = keyWidths[row+","+ii] || normKeySize;
+            km[index].h = normKeySize;
+            km[index].cx = km[index].x + (km[index].w/2);
+            km[index].cy = km[index].y + (km[index].h/2);
+            km[index].row = row;
+            
+            if (row === 1 && ii === 13) {
+                var enterBottomWidth = 62.5;//keyWidths["3,0"]+12*normKeySize;
+            
+                km[index].coords = [
+                    {
+                        x:km[index].x,
+                        y:km[index].y
+                    }, {
+                        x:km[index].x+km[index].w,
+                        y:km[index].y
+                    }, {
+                        x:km[index].x+km[index].w, 
+                        y:km[index].y+(km[index].h*2)
+                    }, {
+                        x:km[index].x+(km[index].w-enterBottomWidth),
+                        y:km[index].y+(km[index].h*2)
+                    }, {
+                        x:km[index].x+(km[index].w-enterBottomWidth),
+                        y:km[index].y+km[index].h
+                    }, {
+                        x:km[index].x,
+                        y:km[index].y+km[index].h
+                    }
+                ];
+                
+                km[index].cx = ( km[index].coords[1].x + km[index].coords[3].x ) / 2;
+                km[index].cy = ( km[index].coords[1].y + km[index].coords[3].y ) / 2;
+            }
+            
+            // set the mount points - these are points where dialogs will attach to keys
+            // all our keys are squares, so this is simple
+            km[index].mountPoint = setMountPoints( km[index] );
+            
+            if (row === 1 && ii === 13) {
+                km[index].mountPoint["bottom"].x = km[index].x + (km[index].w/2);
+                km[index].mountPoint["bottom"].y = km[index].y + km[index].h*2;
+            }
+            
+            curX += km[index].w;
+            index++;
+        }
+        curX = 0.5;//2.5
+        curY += normKeySize;
+    }
+})();
+
+// Japanese keymap (JIS)
+KB.keyMap.japanese = {};
+
+// 50 pixels = 1.9cm
+// 26.315789 pixels = 1cm
+KB.keyMap.japanese.s683_225 = {};
+KB.keyMap.japanese.s683_225.width = 754;//756
+KB.keyMap.japanese.s683_225.height = 252;//254
+KB.keyMap.japanese.s683_225.pixelsPerCm = 26.315789;
+KB.keyMap.japanese.s683_225.split = false;
+(function() {
+    var ii,
+        km = KB.keyMap.japanese.s683_225,
+        normKeySize = 50,
+        row,
+        keyCount = [15,14,13,13,8],
+        index = 0,
+        curX = 0.5,//2.5
+        curY = 0.5,//2.5
+        keyWidths = {};
+        
+    km.leftX = curX;
+    km.leftY = curY;
+        
+    // special key sizes
+    keyWidths["1,0"] = 75; // tab
+    keyWidths["1,13"] = 75; // enter
+    keyWidths["2,0"] = 87.5; // caps
+    keyWidths["3,0"] = 112.5; // l.shift
+    keyWidths["3,12"] = 87.5; //r.shift
+    keyWidths["4,0"] = 75; //l.ctrl
+    keyWidths["4,2"] = 75; //alt
+    keyWidths["4,3"] = 337.5; // space
+    keyWidths["4,7"] = 62.5; //r.ctrl
         
     for (row = 0; row < 5; row++) {
         for (ii = 0; ii < keyCount[row]; ii++) {

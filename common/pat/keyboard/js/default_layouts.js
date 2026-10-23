@@ -12,6 +12,7 @@ KB.keySet = {};
 KB.keySet.standard = {};
 KB.keySet.european = {};
 KB.keySet.european_ss = {};
+KB.keySet.japanese = {};
 KB.keySet.ergodox = {};
 KB.keySet.matrix = {};
 KB.keySet.matrix_split = {};
@@ -1645,6 +1646,99 @@ KB.keySet.european.qwerty = {
         {primary:17,               finger:KB.finger.RIGHT_THUMB}//60
     ]
 };
+
+KB.keySet.japanese.qwerty = {
+    label: "QWERTY",
+    author: "",
+    moreInfoUrl: "https://ja.wikipedia.org/wiki/QWERTY%E9%85%8D%E5%88%97", 
+    moreInfoText: "Wikipedia Entry",
+   "fingerStart":{
+      "1":30,
+      "2":31,
+      "3":32,
+      "4":33,
+      "5":58,
+      "6":58,
+      "7":36,
+      "8":37,
+      "9":38,
+      "10":39,
+      "11":58,
+      "false":-1
+   },
+    keyboardType: "european",
+    keys: [ 
+        {primary:null,              finger:KB.finger.LEFT_PINKY},//0
+        {primary:"1",   shift:"!",  finger:KB.finger.LEFT_PINKY},//1
+        {primary:"2",   shift:"\"", finger:KB.finger.LEFT_RING},//2
+        {primary:"3",   shift:"#",  finger:KB.finger.LEFT_MIDDLE},//3
+        {primary:"4",   shift:"$",  finger:KB.finger.LEFT_INDEX},//4
+        {primary:"5",   shift:"%",  finger:KB.finger.LEFT_INDEX},//5
+        {primary:"6",   shift:"&",  finger:KB.finger.RIGHT_INDEX},//6
+        {primary:"7",   shift:"'",  finger:KB.finger.RIGHT_INDEX},//7
+        {primary:"8",   shift:"(",  finger:KB.finger.RIGHT_MIDDLE},//8
+        {primary:"9",   shift:")",  finger:KB.finger.RIGHT_RING},//9
+        {primary:"0",               finger:KB.finger.RIGHT_PINKY},//10
+        {primary:"-",   shift:"=",  finger:KB.finger.RIGHT_PINKY},//11
+        {primary:"^",   shift:"~",  finger:KB.finger.RIGHT_PINKY},//12
+        {primary:165,   shift:"|",  finger:KB.finger.RIGHT_PINKY},//13
+        {primary:8,                 finger:KB.finger.RIGHT_PINKY},//14
+    
+        {primary:9,                 finger:KB.finger.LEFT_PINKY},//15
+        {primary:"q",   shift:"Q",  finger:KB.finger.LEFT_PINKY},//16
+        {primary:"w",   shift:"W",  finger:KB.finger.LEFT_RING},//17
+        {primary:"e",   shift:"E",  finger:KB.finger.LEFT_MIDDLE},//18
+        {primary:"r",   shift:"R",  finger:KB.finger.LEFT_INDEX},//19
+        {primary:"t",   shift:"T",  finger:KB.finger.LEFT_INDEX},//20
+        {primary:"y",   shift:"Y",  finger:KB.finger.RIGHT_INDEX},//21
+        {primary:"u",   shift:"U",  finger:KB.finger.RIGHT_INDEX},//22
+        {primary:"i",   shift:"I",  finger:KB.finger.RIGHT_MIDDLE},//23
+        {primary:"o",   shift:"O",  finger:KB.finger.RIGHT_RING},//24
+        {primary:"p",   shift:"P",  finger:KB.finger.RIGHT_PINKY},//25
+        {primary:"@",   shift:"`",  finger:KB.finger.RIGHT_PINKY},//26
+        {primary:"[",   shift:"{",  finger:KB.finger.RIGHT_PINKY},//27
+        {primary:"\r",              finger:KB.finger.RIGHT_PINKY},//28
+        
+        {primary:20,                finger:KB.finger.LEFT_PINKY},//29
+        {primary:"a",   shift:"A",  finger:KB.finger.LEFT_PINKY},//30
+        {primary:"s",   shift:"S",  finger:KB.finger.LEFT_RING},//31
+        {primary:"d",   shift:"D",  finger:KB.finger.LEFT_MIDDLE},//32
+        {primary:"f",   shift:"F",  finger:KB.finger.LEFT_INDEX},//33
+        {primary:"g",   shift:"G",  finger:KB.finger.LEFT_INDEX},//34
+        {primary:"h",   shift:"H",  finger:KB.finger.RIGHT_INDEX},//35
+        {primary:"j",   shift:"J",  finger:KB.finger.RIGHT_INDEX},//36
+        {primary:"k",   shift:"K",  finger:KB.finger.RIGHT_MIDDLE},//37
+        {primary:"l",   shift:"L",  finger:KB.finger.RIGHT_RING},//38
+        {primary:";",   shift:"+",  finger:KB.finger.RIGHT_PINKY},//39
+        {primary:":",   shift:"*",  finger:KB.finger.RIGHT_PINKY},//40
+        {primary:"]",   shift:"}",  finger:KB.finger.RIGHT_PINKY},//41
+        
+        
+        {primary:16,                finger:KB.finger.LEFT_PINKY},//42
+        {primary:"z",   shift:"Z", finger:KB.finger.LEFT_PINKY},//43
+        {primary:"x",   shift:"X",  finger:KB.finger.LEFT_PINKY},//44
+        {primary:"c",   shift:"C",  finger:KB.finger.LEFT_RING},//45
+        {primary:"v",   shift:"V",  finger:KB.finger.LEFT_MIDDLE},//46
+        {primary:"b",   shift:"B",  finger:KB.finger.LEFT_INDEX},//47
+        {primary:"n",   shift:"N",  finger:KB.finger.LEFT_INDEX},//48
+        {primary:"m",   shift:"M",  finger:KB.finger.RIGHT_INDEX},//49
+        {primary:",",   shift:"<",  finger:KB.finger.RIGHT_INDEX},//50
+        {primary:".",   shift:">",  finger:KB.finger.RIGHT_MIDDLE},//51
+        {primary:"/",   shift:"?",  finger:KB.finger.RIGHT_RING},//52
+        {primary:"\\",   shift:"_",  finger:KB.finger.RIGHT_PINKY},//53
+        {primary:-16,                finger:KB.finger.RIGHT_PINKY},//54
+        
+        {primary:17,                finger:KB.finger.LEFT_THUMB},//55
+        {primary:-91,               finger:KB.finger.LEFT_THUMB},//56
+        {primary:18,                finger:KB.finger.LEFT_THUMB},//57
+        {primary:" ",               finger:KB.finger.LEFT_THUMB},//58
+        {primary:18,               finger:KB.finger.RIGHT_THUMB},//59
+        {primary:-91,               finger:KB.finger.RIGHT_THUMB},//60
+        {primary:-93,               finger:KB.finger.RIGHT_THUMB},//61
+        {primary:17,                finger:KB.finger.RIGHT_THUMB}//62
+    ]
+};
+
 
 // ----------------------------------------------------------------------------
 // Update Key Sets

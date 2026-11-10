@@ -11,6 +11,7 @@ var KB = KB || {}; // define namespace
 KB.keySet = {};
 KB.keySet.standard = {};
 KB.keySet.european = {};
+KB.keySet.japanese = {};
 KB.keySet.european_ss = {};
 KB.keySet.ergodox = {};
 KB.keySet.matrix = {};
@@ -1643,6 +1644,101 @@ KB.keySet.european.qwerty = {
         {primary:-91,              finger:KB.finger.RIGHT_THUMB},//58
         {primary:-93,              finger:KB.finger.RIGHT_THUMB},//59
         {primary:17,               finger:KB.finger.RIGHT_THUMB}//60
+    ]
+};
+
+KB.keySet.japanese.jis = {
+    label: "JIS 109",
+    author: "User-defined",
+    moreInfoUrl: "",
+    moreInfoText: "",
+    fingerStart: {
+        "1": 30, // 左小指: A
+        "2": 31, // 左薬指: S
+        "3": 32, // 左中指: D
+        "4": 33, // 左人差し指: F
+        "5": 58, // 左親指: Space
+        "6": 58, // 右親指: Space
+        "7": 36, // 右人差し指: J
+        "8": 37, // 右中指: K
+        "9": 38, // 右薬指: L
+        "10": 39, // 右小指: ;
+        "11": 58  // 両親指: Space
+    },
+    keyboardType: "japanese",
+    keys: [
+        // Row 0
+        { primary: -18, finger: KB.finger.LEFT_PINKY },
+        { primary: "1", shift: "!", finger: KB.finger.LEFT_PINKY },
+        { primary: "2", shift: "\"", finger: KB.finger.LEFT_RING },
+        { primary: "3", shift: "#", finger: KB.finger.LEFT_MIDDLE },
+        { primary: "4", shift: "$", finger: KB.finger.LEFT_INDEX },
+        { primary: "5", shift: "%", finger: KB.finger.LEFT_INDEX },
+        { primary: "6", shift: "&", finger: KB.finger.RIGHT_INDEX },
+        { primary: "7", shift: "'", finger: KB.finger.RIGHT_INDEX },
+        { primary: "8", shift: "(", finger: KB.finger.RIGHT_MIDDLE },
+        { primary: "9", shift: ")", finger: KB.finger.RIGHT_RING },
+        { primary: "0", finger: KB.finger.RIGHT_PINKY },
+        { primary: "-", shift: "=", finger: KB.finger.RIGHT_PINKY },
+        { primary: "^", shift: "~", finger: KB.finger.RIGHT_PINKY },
+        { primary: "¥", shift: "|", finger: KB.finger.RIGHT_PINKY },
+        { primary: 8, finger: KB.finger.RIGHT_PINKY },
+
+        // Row 1
+        { primary: 9, finger: KB.finger.LEFT_PINKY },
+        { primary: "q", shift: "Q", finger: KB.finger.LEFT_PINKY },
+        { primary: "w", shift: "W", finger: KB.finger.LEFT_RING },
+        { primary: "e", shift: "E", finger: KB.finger.LEFT_MIDDLE },
+        { primary: "r", shift: "R", finger: KB.finger.LEFT_INDEX },
+        { primary: "t", shift: "T", finger: KB.finger.LEFT_INDEX },
+        { primary: "y", shift: "Y", finger: KB.finger.RIGHT_INDEX },
+        { primary: "u", shift: "U", finger: KB.finger.RIGHT_INDEX },
+        { primary: "i", shift: "I", finger: KB.finger.RIGHT_MIDDLE },
+        { primary: "o", shift: "O", finger: KB.finger.RIGHT_RING },
+        { primary: "p", shift: "P", finger: KB.finger.RIGHT_PINKY },
+        { primary: "@", shift: "`", finger: KB.finger.RIGHT_PINKY },
+        { primary: "[", shift: "{", finger: KB.finger.RIGHT_PINKY },
+        { primary: "\r", finger: KB.finger.RIGHT_PINKY },
+
+        // Row 2
+        { primary: 20, finger: KB.finger.LEFT_PINKY },
+        { primary: "a", shift: "A", finger: KB.finger.LEFT_PINKY },
+        { primary: "s", shift: "S", finger: KB.finger.LEFT_RING },
+        { primary: "d", shift: "D", finger: KB.finger.LEFT_MIDDLE },
+        { primary: "f", shift: "F", finger: KB.finger.LEFT_INDEX },
+        { primary: "g", shift: "G", finger: KB.finger.LEFT_INDEX },
+        { primary: "h", shift: "H", finger: KB.finger.RIGHT_INDEX },
+        { primary: "j", shift: "J", finger: KB.finger.RIGHT_INDEX },
+        { primary: "k", shift: "K", finger: KB.finger.RIGHT_MIDDLE },
+        { primary: "l", shift: "L", finger: KB.finger.RIGHT_RING },
+        { primary: ";", shift: "+", finger: KB.finger.RIGHT_PINKY },
+        { primary: ":", shift: "*", finger: KB.finger.RIGHT_PINKY },
+        { primary: "]", shift: "}", finger: KB.finger.RIGHT_PINKY },
+
+        // Row 3
+        { primary: 16, finger: KB.finger.LEFT_PINKY },
+        { primary: "z", shift: "Z", finger: KB.finger.LEFT_PINKY },
+        { primary: "x", shift: "X", finger: KB.finger.LEFT_RING },
+        { primary: "c", shift: "C", finger: KB.finger.LEFT_MIDDLE },
+        { primary: "v", shift: "V", finger: KB.finger.LEFT_INDEX },
+        { primary: "b", shift: "B", finger: KB.finger.LEFT_INDEX },
+        { primary: "n", shift: "N", finger: KB.finger.RIGHT_INDEX },
+        { primary: "m", shift: "M", finger: KB.finger.RIGHT_INDEX },
+        { primary: ",", shift: "<", finger: KB.finger.RIGHT_MIDDLE },
+        { primary: ".", shift: ">", finger: KB.finger.RIGHT_RING },
+        { primary: "/", shift: "?", finger: KB.finger.RIGHT_PINKY },
+        { primary: "\\", shift: "_", finger: KB.finger.RIGHT_PINKY },
+        { primary: -16, finger: KB.finger.RIGHT_PINKY },
+
+        // Row 4
+        { primary: 17, finger: KB.finger.LEFT_THUMB },
+        { primary: -91, finger: KB.finger.LEFT_THUMB },
+        { primary: 18, finger: KB.finger.LEFT_THUMB },
+        { primary: " ", finger: KB.finger.LEFT_THUMB },
+        { primary: 18, finger: KB.finger.RIGHT_THUMB },
+        { primary: -91, finger: KB.finger.RIGHT_THUMB },
+        { primary: -93, finger: KB.finger.RIGHT_THUMB },
+        { primary: 17, finger: KB.finger.RIGHT_THUMB }
     ]
 };
 
